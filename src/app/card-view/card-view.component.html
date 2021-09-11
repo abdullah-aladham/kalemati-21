@@ -1,12 +1,16 @@
 <ion-header>
-
+  <ion-icon name="close-outline" id="close" (click)="close()"></ion-icon>
 </ion-header>
 
 
 
 <ion-content>
-  <ion-grid>
-  <img src="#" alt="image1">
-</ion-grid>
+  <ion-slides [options]="option" class="ion-margin-top">
+    <ion-slide>
+      <ion-card></ion-card>
+    </ion-slide>
+    <ion-slide>Slide 3</ion-slide>
+    <ion-slide>Slide 3</ion-slide>
+    </ion-slides>
 
 </ion-content>
