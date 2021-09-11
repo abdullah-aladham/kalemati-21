@@ -1,9 +1,9 @@
-<ion-header>
-  <ion-toolbar>
+<ion-toolbar>
     <ion-title>add child</ion-title>
     <meta charset="utf-8">
-  </ion-toolbar>
-</ion-header>
+    <ion-icon name="close-outline" id="close" (click)="cancel()"></ion-icon>
+
+</ion-toolbar>
 <ion-content>
   <ion-header>
 
@@ -28,8 +28,6 @@
     <ion-item>
       <ion-button (click)="addchild()">add child</ion-button>
     </ion-item>
-    <ion-item>
-      <ion-button (click)="cancel()">cancel</ion-button>
-    </ion-item>
+  
   </ion-form>
 </ion-content>

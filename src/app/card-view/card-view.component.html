@@ -5,12 +5,12 @@
 
 
 <ion-content>
-  <ion-slides [options]="option" class="ion-margin-top">
-    <ion-slide>
-      <ion-card></ion-card>
-    </ion-slide>
-    <ion-slide>Slide 3</ion-slide>
-    <ion-slide>Slide 3</ion-slide>
-    </ion-slides>
+  <ion-label id="lock1"> <ion-icon name="lock-open-outline"></ion-icon></ion-label>
+      <ion-toggle expand="full" (click)="toggleTouch()" >
+       <ion-label> <ion-icon name="lock-open-outline"></ion-icon></ion-label>
+      </ion-toggle>
+  <ion-grid>
+    <img src="assets/kalemati.png" alt="kalemati">
+  </ion-grid>
 
 </ion-content>

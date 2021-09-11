@@ -12,3 +12,21 @@ img{
     align-items: center;
     justify-content: center;
 }
+ion-toggle ,ion-label{
+    position:fixed;
+    right:5px;
+}
+#lock1{
+    position:fixed;
+    right:60px;
+    top:65px;
+    color:#FEAD1D;
+}
+#close{
+    position: fixed;
+    right:10px;
+    top:5px;
+}
+*{
+    color:#FEAD1D;
+}

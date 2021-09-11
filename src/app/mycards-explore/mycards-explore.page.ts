@@ -39,15 +39,16 @@ cardview(){
   }
   );
 }
-touchAllowed=false;
-next(){
+touchAllowed=true;
+/*next(){
   this.swiper.swiperRef.slideNext(500);
 }
 prev(){
   this.swiper.swiperRef.slidePrev(500);
-}
+}*/
 toggleTouch(){
   this.touchAllowed= !this.touchAllowed;
   this.swiper.swiperRef.allowTouchMove=this.touchAllowed;
 }
+
 }

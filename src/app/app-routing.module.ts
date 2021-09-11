@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'mycards-explore',
     loadChildren: () => import('./mycards-explore/mycards-explore.module').then( m => m.MycardsExplorePageModule)
+  },
+  {
+    path: 'admin-dashboard',
+    loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
   }
 ];
 @NgModule({

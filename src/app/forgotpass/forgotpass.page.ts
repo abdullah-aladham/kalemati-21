@@ -11,5 +11,11 @@ export class ForgotpassPage implements OnInit {
 
   ngOnInit() {
   }
-
+  doRefresh(event){
+    console.log('Begin async operation');
+    setTimeout(()=>{
+      console.log('async operation has ended');
+      event.target.complete();
+    },2000);
+  }
 }
