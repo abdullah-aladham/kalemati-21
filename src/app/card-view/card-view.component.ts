@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import SwiperCore from 'swiper';
+import { IonicSwiper, ModalController } from '@ionic/angular';
+SwiperCore.use([IonicSwiper]);
 @Component({
   selector: 'app-card-view',
   templateUrl: './card-view.component.html',
@@ -7,8 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(public ModalCtrl:ModalController) { }
 
   ngOnInit() {}
+
+   close() {
+    this.ModalCtrl.dismiss({
+      dismissed: true
+    });
+
+  }
 
 }

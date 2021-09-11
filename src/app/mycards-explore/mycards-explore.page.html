@@ -1,0 +1,45 @@
+  <ion-toolbar>
+    <ion-title class="ion-text-center">*Package name*</ion-title>
+  </ion-toolbar>
+
+<ion-content>
+<swiper [config]="config" [allowTouchMove]="false" ><!--[allowTouchMove]="false" this can be used for locking -->
+  <ng-template swiperSlide >
+   
+        <img src="assets/kalemati.png" alt="kalemati">
+    
+</ng-template>
+  <ng-template swiperSlide>Slide 2</ng-template>
+  <ng-template swiperSlide>Slide3</ng-template>
+  <ng-template swiperSlide>Slide4</ng-template>
+  <ng-template swiperSlide>Slide5</ng-template>
+  <ng-template swiperSlide>Slide6</ng-template>
+  <ng-template swiperSlide>Slide7</ng-template>
+  <ng-template swiperSlide>Slide8</ng-template>
+  <ng-template swiperSlide>Slide9</ng-template>
+  <ng-template swiperSlide>Slide10</ng-template>
+  <ng-template swiperSlide>Slide1</ng-template>
+</swiper>
+
+
+
+</ion-content>
+<ion-footer>
+  <ion-row>
+    <ion-col size="4">
+      <ion-button expand="full" (click)="prev()">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="4">
+      <ion-button expand="full" (click)="toggleTouch()">
+        <ion-icon name="lock-open-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="4">
+      <ion-button expand="full" (click)="next()">
+        <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

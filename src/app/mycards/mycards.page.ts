@@ -37,4 +37,7 @@ export class MyCardsPage implements OnInit {
     this.router.navigateByUrl('tabs/tab1');
 
   }
+  open(){
+    this.router.navigateByUrl('mycards-explore');
+  }
 }

@@ -4,18 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MycardsPageRoutingModule } from './mycards-routing.module';
+import { MycardsExplorePageRoutingModule } from './mycards-explore-routing.module';
 import { SwiperModule } from 'swiper/angular';
-import { MyCardsPage } from './mycards.page';
+
+import { MycardsExplorePage } from './mycards-explore.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MycardsPageRoutingModule,
+    MycardsExplorePageRoutingModule,
     SwiperModule
   ],
-  declarations: [MyCardsPage]
+  declarations: [MycardsExplorePage]
 })
-export class MycardsPageModule {}
+export class MycardsExplorePageModule {}

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { AddchildComponent } from '../addchild/addchild.component';
@@ -7,9 +7,7 @@ import {Platform} from '@ionic/angular';
 @Component({
   selector: 'app-mainpage',
   templateUrl: 'mainpage.page.html',
-  styleUrls: ['mainpage.page.scss'],
-  encapsulation:ViewEncapsulation.None
-
+  styleUrls: ['mainpage.page.scss']
 })
 export class Mainpage {
 

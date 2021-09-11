@@ -2,7 +2,8 @@ ion-title{
     text-align: center;
 }
 
- ion-card   {
+
+/* ion-card   {
 
 margin: center;
 }
@@ -21,7 +22,7 @@ margin: center;
     padding:0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-}*/
+}
 .notification_wrap  {
     width:50px;
     margin:5px auto 0;
@@ -85,10 +86,4 @@ margin-left: 5px;
 .notification_wrap .dropdown:active{
     display: block;
 } 
-ion-card ion-grid{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-}
+*/
