@@ -40,6 +40,7 @@ cardview(){
   );
 }
 touchAllowed=true;
+
 /*next(){
   this.swiper.swiperRef.slideNext(500);
 }
@@ -49,6 +50,7 @@ prev(){
 toggleTouch(){
   this.touchAllowed= !this.touchAllowed;
   this.swiper.swiperRef.allowTouchMove=this.touchAllowed;
+
 }
 
 }
