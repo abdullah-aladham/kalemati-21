@@ -1,6 +1,9 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 //import * as Chart from "chart.js";
 import {Chart} from'chart.js';
+import { Customer } from '../Customer';
+import { CustomerServiceService } from '../customer-service.service';
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.page.html',
@@ -8,13 +11,32 @@ import {Chart} from'chart.js';
 })
 export class AdminDashboardPage implements OnInit {
 
-  constructor() { }
-  private investmentChart:Chart;
+  constructor(private customerService:CustomerServiceService) { }
+  public customers:Customer[];
+
+
+  public getCustomers():void{
+      this.customerService.getCustomers().subscribe(
+          (response:Customer[])=>{
+              this.customers=response;
+          
+      },(error:HttpErrorResponse)=>{
+          alert(error.message);
+      }
+      );
+  }
+  //  private investmentChart:Chart;
   ngOnInit() {
-    this.generateCharts();
+    //this.generateCharts();
+    this.getCustomers();
   }
 
-  async generateCharts(){
+  
+  
+  
+  
+  
+  /*async generateCharts(){
   
     var ctx = document.getElementById('investment-chart');
     var myChart = new Chart(ctx, {
@@ -52,6 +74,7 @@ export class AdminDashboardPage implements OnInit {
         }
     });
     
-    }
+    }*/
   
+
 }

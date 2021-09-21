@@ -25,7 +25,7 @@ public List<Subscriptions> findAllSubs(){
 	return subRepo.findAll();
 }
 public Subscriptions findSubscriptionById(Long id) {
-	return SubscriptionRepo.findSubscriptionById(id).orElseThrow(()->new SubscriptionNotFoundExceprion("The Subscription that you are looking is not found") );
+	return SubscriptionRepo.findSubscriptionById(id).orElseThrow(()->new SubscriptionNotFoundException("The Subscription that you are looking is not found") );
 }
 public Subscriptions updateSubscription(Subscriptions sub) {
 	subRepo.save(sub);
