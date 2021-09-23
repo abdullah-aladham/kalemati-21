@@ -31,12 +31,13 @@ export class AddchildComponent implements OnInit {
     age: ''
   },];
   addchild() {
-    if (this.name == null || this.age == null || this.age == null) {
-      document.getElementById('error').innerHTML = 'invaled credintials';
-
-      return;
+   
+    let child = { name: this.name, gender: this.gender, age:this.age };//these elements are connected with above inputs but the above ones are not connected with ngmodels 
+    if(child.gender==='female'){
+      
     }
-
+    this.modalCtrl.dismiss({ child });
+    
 
 
     // alert('jwjhegwge');

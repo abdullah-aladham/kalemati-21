@@ -17,6 +17,6 @@ import { CustomerServiceService } from '../customer-service.service';
     AdminDashboardPageRoutingModule
   ],
   declarations: [AdminDashboardPage],
-  providers:[CustomerServiceService]
+//  providers:[CustomerServiceService]
 })
 export class AdminDashboardPageModule {}
