@@ -1,8 +1,19 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { AfterContentChecked, Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { AddchildComponent } from '../addchild/addchild.component';
 import {Platform} from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
+//import { SwiperOptions } from 'swiper';
+import { SwiperComponent } from 'swiper/angular';
+//import Swiper, { SwiperOptions } from 'swiper';
+import swiperCore,{Pagination} from 'swiper/core';
+import Swiper, { SwiperOptions } from 'swiper';
+
+
+swiperCore.use([Pagination]);
+
+//import {SimpleNotificationsModule} from 'angular2-notification';
 //declare var $: any;
 @Component({
   selector: 'app-mainpage',
@@ -11,13 +22,24 @@ import {Platform} from '@ionic/angular';
   encapsulation:ViewEncapsulation.None
 
 })
-export class Mainpage {
+export class Mainpage implements AfterContentChecked {
 
-  constructor(public ModalCtrl: ModalController, public router: Router,public platform:Platform)
+  constructor(public ModalCtrl: ModalController, public router: Router,public platform:Platform,public toastController:ToastController)
    {
 
 
    }
+   config:SwiperOptions ={
+    slidesPerView:1,
+    spaceBetween:30,
+    pagination:true,
+  };
+@ViewChild('swiper') swiper:SwiperComponent;
+ngAfterContentChecked(){
+  if(this.swiper){
+    this.swiper.updateSwiper({});
+  }
+}
   
   name: string;
   age: number;
@@ -33,7 +55,7 @@ export class Mainpage {
         if (data) {
           const child1 = data.data.obj;
           this.children.push(child1);
-          console.log(child1);
+        
 
         }
       }));
@@ -62,4 +84,6 @@ doRefresh(event){
     event.target.complete();
   },2000);
 }
+
+
 }

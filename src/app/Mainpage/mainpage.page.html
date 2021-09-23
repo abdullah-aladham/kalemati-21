@@ -8,12 +8,13 @@
   <ion-buttons slot="start">
     <ion-menu-button menu="main-menu"></ion-menu-button>
   </ion-buttons>
-  <div class="wrapper">
+  <ion-icon name="notifications-outline" (click)="openToast()" id="notif"></ion-icon>
+  <!--<div class="wrapper">
 <div class="notification_wrap">
   <div class="notification_icon">
     <ion-icon name="notifications-outline" class="notif_bell"></ion-icon>
-  </div>
-  <div class="dropdown">
+  </div>-->
+ <!-- <div class="dropdown">
     <div class="notify_item"></div>
     <div class="notify_img">
       <img src="assets/kalemati.png" alt="kalemati notification_icon" style="width: 50px;">
@@ -25,7 +26,7 @@
   </div>
 </div>
 
-  </div>
+  </div>-->
 </ion-toolbar>
 <meta charset="utf-8">
 
@@ -42,11 +43,12 @@
       <ion-icon name="add-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <div>
+ 
     <ion-grid>
-      <ion-col>
+      <ion-col size="12">
 
         <ion-row>
+          
           <ion-card>
 
             <ion-card-content>
@@ -71,7 +73,25 @@
         </ion-row>
       </ion-col>
     </ion-grid>
-  </div>
+    <ion-grid>
+      <ion-col>
+        <ion-row>
+          <swiper #swiper  [config]="config"  ><!--[allowTouchMove]="false" this can be used for locking -->
+            <ng-template swiperSlide *ngFor="let child of children" >
+            <ion-card>
+              <ion-card-header>{{child.name}}</ion-card-header>
+              <ion-card-content><img src="./assets/girl1.png" alt="image template"></ion-card-content>
+            <p>{{child.age}} years</p>  
+            </ion-card>
+        </ng-template>
+           <!--   <ng-template swiperSlide >
+              <ion-card ><ion-card-header>{{child?.name}}</ion-card-header>
+              <ion-card-content><img src="assets/boy.png " alt="image template"></ion-card-content>
+              </ion-card></ng-template>-->
+             </swiper>
+        </ion-row>
+      </ion-col>
+    </ion-grid>
  
       <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" pullFactor="0.5" pullMin="100" pullMax="200">
         <ion-refresher-content 

@@ -6,6 +6,7 @@ import { Mainpage } from './mainpage.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab1PageRoutingModule } from './mainpage-routing.module';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { Tab1PageRoutingModule } from './mainpage-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+    SwiperModule
   ],
   declarations: [Mainpage]
 })

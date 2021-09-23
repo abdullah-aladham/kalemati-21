@@ -85,10 +85,40 @@ margin-left: 5px;
 .notification_wrap .dropdown:active{
     display: block;
 } 
-ion-card ion-grid{
+
+#notif{
+    position: fixed;
+    right:15px;
+    top:15px;
+    color:#FDAC1C;
+    font-size:25px;
+}
+.swiper-container{
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+}
+ion-toggle ,ion-label{
+    position:fixed;
+    right:5px;
+}
+img{
+    width: 90px;
+    height:90px;
+}
+#lock1{
+    position:fixed;
+    right:60px;
+    top:65px;
+    color:#FEAD1D;
+}
+#close{
+    position: fixed;
+    right:10px;
+    top:5px;
 }
