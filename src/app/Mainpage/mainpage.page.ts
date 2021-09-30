@@ -1,6 +1,6 @@
 import { AfterContentChecked, Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalController } from '@ionic/angular';
+import { ModalController, PopoverController } from '@ionic/angular';
 import { AddchildComponent } from '../addchild/addchild.component';
 import {Platform} from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
@@ -9,6 +9,7 @@ import { SwiperComponent } from 'swiper/angular';
 //import Swiper, { SwiperOptions } from 'swiper';
 import swiperCore,{Pagination} from 'swiper/core';
 import Swiper, { SwiperOptions } from 'swiper';
+import { PopoverComponent } from '../popover/popover.component';
 
 
 swiperCore.use([Pagination]);
@@ -24,7 +25,7 @@ swiperCore.use([Pagination]);
 })
 export class Mainpage implements AfterContentChecked {
 
-  constructor(public ModalCtrl: ModalController, public router: Router,public platform:Platform,public toastController:ToastController)
+  constructor(public ModalCtrl: ModalController, public router: Router,public platform:Platform,public toastController:ToastController,private popCtrl:PopoverController)
    {
 
 
@@ -85,5 +86,11 @@ doRefresh(event){
   },2000);
 }
 
-
+async opennotif(ev:any){
+const popover=await this.popCtrl.create({
+  component:PopoverComponent,
+  event:ev
+})
+return await popover.present();
+}
 }

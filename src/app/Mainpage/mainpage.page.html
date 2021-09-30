@@ -1,14 +1,12 @@
 <ion-toolbar id="title">
-  <script src="https://kit.fontawesome.com/e847308fac.js" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
+
   <ion-title>
     Main Page
   </ion-title>
   <ion-buttons slot="start">
     <ion-menu-button menu="main-menu"></ion-menu-button>
   </ion-buttons>
-  <ion-icon name="notifications-outline" (click)="openToast()" id="notif"></ion-icon>
+  <ion-icon name="notifications-outline"  id="notif" (click)="opennotif($event)"></ion-icon>
   <!--<div class="wrapper">
 <div class="notification_wrap">
   <div class="notification_icon">

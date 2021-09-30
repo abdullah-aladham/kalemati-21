@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab1PageRoutingModule } from './mainpage-routing.module';
 import { SwiperModule } from 'swiper/angular';
+import { PopoverComponent } from '../popover/popover.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { SwiperModule } from 'swiper/angular';
     Tab1PageRoutingModule,
     SwiperModule
   ],
-  declarations: [Mainpage]
+  declarations: [Mainpage,PopoverComponent]
 })
 export class MainpageModule {}

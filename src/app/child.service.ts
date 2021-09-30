@@ -8,7 +8,7 @@ import { environment } from 'D:/ion21/kalemati/src/environments/environment';
   providedIn: 'root'
 })
 export class ChildService {
-  private apiServerUrl=environment.apiBaseUrl;
+ /* private apiServerUrl=environment.apiBaseUrl;
   constructor(private http: HttpClient) { }
   public getChildren():Observable<child[]>
   {
@@ -25,5 +25,5 @@ export class ChildService {
   public deleteChild(childId:number):Observable<void>{
     return this.http.delete<void>(`${this.apiServerUrl}/child/delete/${childId}`);
 
-  }
+  }*/
 }
