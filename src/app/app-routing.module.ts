@@ -38,10 +38,7 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
-  {
-    path: 'ion-popover',
-    loadChildren: () => import('./ion-popover/ion-popover.module').then( m => m.IonPopoverPageModule)
-  }
+ 
 ];
 @NgModule({
   imports: [

@@ -91,6 +91,6 @@ const popover=await this.popCtrl.create({
   component:PopoverComponent,
   event:ev
 })
-return await popover.present();
+return await popover.present()
 }
 }
