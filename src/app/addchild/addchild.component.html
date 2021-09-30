@@ -8,7 +8,7 @@
   <ion-header>
 
   </ion-header>
-  <ion-form >
+  <ion-form (ngSubmit)="addchild()" #addform="ngForm">
     <div id="error"></div>
     <ion-item>
       <ion-label position="floating">Child name</ion-label>
@@ -26,7 +26,7 @@
       <ion-input type="number" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-button (click)="addchild()">add child</ion-button>
+      <ion-button type="submit">add child</ion-button>
     </ion-item>
   
   </ion-form>
