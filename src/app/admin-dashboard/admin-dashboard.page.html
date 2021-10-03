@@ -3,15 +3,30 @@
   </ion-toolbar>
 
 <ion-content  >
-<ion-grid *ngFor="let customer of customers">
-  <ion-row>{{customer.name}}</ion-row>
+  <ion-button (click)="add_Custoemr()">Add Customer</ion-button>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-header>
+          Chart1
+        </ion-card-header>
+        <ion-card-contetnt>
+          chart 1 graph
+        </ion-card-contetnt>
+      </ion-card>
+      <ion-card>
+        <ion-card-header></ion-card-header>
+      </ion-card>
+      <ion-list>
+        <ion-list-header>
+          List of children
+        </ion-list-header>
+        <ion-item>ahmad</ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  
 </ion-grid>
-<!--<ion-card>
-  <ion-card-header></ion-card-header>
-  <ion-card-content>
-  <div id="chart-container" style="display:block">
-    <canvas id="investment-chart"></canvas>
-  </div>
-</ion-card-content>
-</ion-card>-->
+
 </ion-content>

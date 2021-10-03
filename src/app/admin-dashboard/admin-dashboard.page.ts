@@ -1,8 +1,10 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 //import * as Chart from "chart.js";
 import {Chart} from'chart.js';
 import { Customer } from '../Customer';
+import { CustomerRegisterComponent } from '../customer-register/customer-register.component';
 import { CustomerServiceService } from '../customer-service.service';
 @Component({
   selector: 'app-admin-dashboard',
@@ -11,8 +13,8 @@ import { CustomerServiceService } from '../customer-service.service';
 })
 export class AdminDashboardPage implements OnInit {
 
-  constructor(private customerService:CustomerServiceService) { }
-  public customers:Customer[];
+  constructor(private customerService:CustomerServiceService,private modalCtrl:ModalController) { }
+ /* public customers:Customer[];
 
 
   public getCustomers():void{
@@ -24,15 +26,23 @@ export class AdminDashboardPage implements OnInit {
           alert(error.message);
       }
       );
-  }
+  }*/
   //  private investmentChart:Chart;
   ngOnInit() {
     //this.generateCharts();
-    this.getCustomers();
+   // this.getCustomers();
   }
 
   
-  
+    add_Custoemr(){
+    const register=await this.modalCtrl.create({
+        component:CustomerRegisterComponent
+        
+      });
+     // return await register.present();
+      }
+}
+
   
   
   
@@ -76,5 +86,4 @@ export class AdminDashboardPage implements OnInit {
     
     }*/
   
-
 }
