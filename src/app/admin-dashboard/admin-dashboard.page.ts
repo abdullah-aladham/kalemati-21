@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 //import * as Chart from "chart.js";
-import {Chart} from'chart.js';
+import {Chart,registerables } from 'chart.js';
 import { Customer } from '../Customer';
 import { CustomerRegisterComponent } from '../customer-register/customer-register.component';
 import { CustomerServiceService } from '../customer-service.service';
@@ -14,6 +14,7 @@ import { CustomerServiceService } from '../customer-service.service';
 export class AdminDashboardPage implements OnInit {
 
   constructor(private customerService:CustomerServiceService,private modalCtrl:ModalController) { }
+  
  /* public customers:Customer[];
 
 
@@ -28,62 +29,57 @@ export class AdminDashboardPage implements OnInit {
       );
   }*/
   //  private investmentChart:Chart;
+  chart:any=[];
+  
   ngOnInit() {
     //this.generateCharts();
-   // this.getCustomers();
+   // this.getCustomers();4
+   Chart.register(...registerables);
+this.chart= new Chart('canvas',{
+  type:'line',
+  data:{
+    labels:['saturday','sunday','monday','Tuesday','Wedensday','Thursday','Friday'],
+    datasets:[{
+      label:'Time spent online on app in minutes',
+      data:[1,3,5,10,56,65,35,543,543,543],
+      backgroundColor:'red',
+      borderColor:'red',
+      fill:false
+    },
+  
+  ]
+  }
+})
+this.chart= new Chart('canvas1',{
+  type:'pie',
+  data:{
+    labels:['Male','Female'],
+    datasets:[{
+      label:'Children gender',
+      data:[10,10],
+      backgroundColor:['blue','hotpink'],
+      hoverOffset:4
+      
+    },
+  
+  ]
+  }
+})
+
   }
 
   
-    add_Custoemr(){
+  /*  add_Custoemr(){
     const register=await this.modalCtrl.create({
         component:CustomerRegisterComponent
         
       });
      // return await register.present();
       }
-}
+}*/
 
   
   
   
-  /*async generateCharts(){
-  
-    var ctx = document.getElementById('investment-chart');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-    
-    }*/
-  
+
 }

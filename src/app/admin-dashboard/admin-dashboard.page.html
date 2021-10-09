@@ -5,27 +5,45 @@
 <ion-content  >
   <ion-button (click)="add_Custoemr()">Add Customer</ion-button>
 <ion-grid>
-  <ion-row>
-    <ion-col>
-      <ion-card>
+  
+      <ion-row>
+        <ion-col>
+      <ion-card id="Chart1">
         <ion-card-header>
           Chart1
         </ion-card-header>
-        <ion-card-contetnt>
-          chart 1 graph
-        </ion-card-contetnt>
+      
+<div>
+  <canvas id="canvas">
+    
+  </canvas>
+  </div>
+    
       </ion-card>
-      <ion-card>
-        <ion-card-header></ion-card-header>
+      <ion-card >
+        <ion-card-header>
+          percentage of children added 
+        </ion-card-header>
+      
+<div>
+  <canvas id="canvas1">
+    
+  </canvas>
+  </div>
+    
       </ion-card>
+      
       <ion-list>
         <ion-list-header>
           List of children
         </ion-list-header>
+        
         <ion-item>ahmad</ion-item>
       </ion-list>
     </ion-col>
-  </ion-row>
+
+    </ion-row>
+ 
   
 </ion-grid>
 
