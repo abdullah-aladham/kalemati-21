@@ -68,8 +68,14 @@ this.chart= new Chart('canvas1',{
 
   }
 
-  
-  /*  add_Custoemr(){
+  async addcustomer(){
+    const register=await this.modalCtrl.create({
+      component:CustomerRegisterComponent
+      
+    });
+     await register.present();
+  }
+  /*  add_Custor(){
     const register=await this.modalCtrl.create({
         component:CustomerRegisterComponent
         

@@ -1,20 +1,29 @@
 <ion-header></ion-header>
 <ion-content>
-  <ion-form>
+  <ion-form id="form" action="#">
     <ion-item>
       <ion-label position="floating">First name</ion-label>
-      <ion-input></ion-input>
+      <ion-input id="firstname"></ion-input>
+      <span id="fname" ></span>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Last name</ion-label>
-      <ion-input></ion-input>
+      <ion-input id="lastname"></ion-input>
+      <span id="lname"></span>
     </ion-item>
-    <ion-item><ion-label> Phone number</ion-label>
+    <ion-item>
+      <ion-label> Phone number</ion-label>
+      <ion-input id="phone"></ion-input>
+      <span id="phoneErr"></span>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Email</ion-label>
-      <ion-input></ion-input>
+      <ion-input id="email"></ion-input>
+      <span id="EmailErr"></span>
     </ion-item>
-    <ion-button (click)="createCustomer()">Create Customer</ion-button>
+    <ion-item>
+      
+    <ion-button (click)="createCustomer()" type="submit">Customer Signup</ion-button>
+    </ion-item>
   </ion-form>
 </ion-content><!-- password ,customer code and username is sent via email -->
