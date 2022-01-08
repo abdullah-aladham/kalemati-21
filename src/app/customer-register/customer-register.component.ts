@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { FormControl, Validators,FormBuilder,FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-customer-register',
@@ -6,29 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer-register.component.scss'],
 })
 export class CustomerRegisterComponent implements OnInit {
-  firstname=document.getElementById("firstname");
-  lastname=document.getElementById("lastname");
-  Phonenumber=document.getElementById("phone");
-  email=document.getElementById("email");
-   Form=document.getElementById("form");
+  // //this.firstname=new FormControl('', Validators.required);
+
+  // firstname=document.getElementById("firstname");
+  // lastname=document.getElementById("lastname");
+  // Phonenumber=document.getElementById("phone");
+  // email=document.getElementById("email");
+  //  Form=document.getElementById("form");
+  
+
 
   constructor() { }
 
   ngOnInit() {
-    if(this.firstname===null ){
-      document.getElementById("fname").innerHTML="Firstname cannot be null";
-      return;
-    }
-    else if(this.lastname===null){
-      document.getElementById("lname").innerHTML="Last name cannot be null";
-    }
-    else if(this.Phonenumber===null ){
-      document.getElementById("phoneErr").innerHTML="phone number cannot be null";
-    }
-    else if(this.email===null ){
-      document.getElementById("EmailErr").innerHTML="Email cannot be null";
-    }
-
+    
   }
 
 

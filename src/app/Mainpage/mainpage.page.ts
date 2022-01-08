@@ -52,14 +52,14 @@ ngAfterContentChecked(){
     });
     modal1.then(mdl => {
       mdl.present();
-      modal1.then(md => md.onDidDismiss().then((data: any) => {
-        if (data) {
-          const child1 = data.data.obj;
-          this.children.push(child1);
+      // modal1.then(md => md.onDidDismiss().then((data: any) => {
+      //   if (data) {
+      //     const child1 = data.data.obj;
+      //     this.children.push(child1);
         
 
-        }
-      }));
+      //   }
+      // }));
     }
     );
   }

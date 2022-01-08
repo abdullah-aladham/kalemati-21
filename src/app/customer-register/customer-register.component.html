@@ -1,14 +1,14 @@
 <ion-header></ion-header>
 <ion-content>
-  <ion-form id="form" action="#">
+  <ion-form id="form" action="#" [FormGroup]="register">
     <ion-item>
       <ion-label position="floating">First name</ion-label>
-      <ion-input id="firstname"></ion-input>
-      <span id="fname" ></span>
+      <ion-input id="firstname" formControlName="firstname"></ion-input>
+      <span id="fname"  ></span>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Last name</ion-label>
-      <ion-input id="lastname"></ion-input>
+      <ion-input id="lastname" ></ion-input>
       <span id="lname"></span>
     </ion-item>
     <ion-item>
@@ -22,7 +22,7 @@
       <span id="EmailErr"></span>
     </ion-item>
     <ion-item>
-      
+    
     <ion-button (click)="createCustomer()" type="submit">Customer Signup</ion-button>
     </ion-item>
   </ion-form>

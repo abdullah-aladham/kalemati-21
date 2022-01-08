@@ -1,6 +1,6 @@
 <ion-toolbar id="title">
 
-  <ion-title>
+  <ion-title class="justify-text-center">
     Main Page
   </ion-title>
   <ion-buttons slot="start">
@@ -47,7 +47,7 @@
 
         <ion-row>
           
-          <ion-card>
+          <ion-card id="mycards">
 
             <ion-card-content>
               <img src="assets/kalemati.png" width="90px" height="90px" alt="كروتي" (click)="cards()">
@@ -57,10 +57,10 @@
             </ion-card-content>
 
           </ion-card>
-          <ion-card>
+          <ion-card id="market">
 
             <ion-card-content>
-              <img src="assets/kalemati.png" width="90px" height="90px" alt="كروتي" (click)="market()">
+              <img src="assets/kalemati.png" width="90px" height="90px" alt="سوق الكروت" (click)="market()">
               <div>
                 <p (click)="market()">سوق الكروت</p>
               </div>
@@ -73,9 +73,11 @@
     </ion-grid>
     <ion-grid>
       <ion-col>
+        <h4>Children</h4>
         <ion-row>
           <swiper #swiper  [config]="config"  ><!--[allowTouchMove]="false" this can be used for locking -->
             <ng-template swiperSlide *ngFor="let child of children" >
+              
             <ion-card>
               <ion-card-header>{{child.name}}</ion-card-header>
               <ion-card-content><img src="./assets/girl1.png" alt="image template"></ion-card-content>
