@@ -4,6 +4,7 @@ import { MarketPage } from '../market/market.page';
 import { MyCardsPage } from '../mycards/mycards.page';
 import { TabsPage } from '../tabs/tabs.page';
 import { Mainpage } from './mainpage.page';
+import { LogoutPage } from '../logout/logout.page';
 
 const routes: Routes = [
   {
@@ -22,7 +23,10 @@ const routes: Routes = [
     path:'tabs',
     
     component:TabsPage,
-   
+  },
+  {
+    path:'logout',
+    component:LogoutPage
   }
 ];
 
