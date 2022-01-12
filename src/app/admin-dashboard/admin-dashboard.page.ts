@@ -6,6 +6,8 @@ import {Chart,registerables } from 'chart.js';
 import { Customer } from '../Customer';
 import { CustomerRegisterComponent } from '../customer-register/customer-register.component';
 import { CustomerServiceService } from '../customer-service.service';
+import { map } from 'rxjs/operators';
+import {Children} from '../Model/Children';
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.page.html',
@@ -13,7 +15,7 @@ import { CustomerServiceService } from '../customer-service.service';
 })
 export class AdminDashboardPage implements OnInit {
 
-  constructor(private customerService:CustomerServiceService,private modalCtrl:ModalController) { }
+  constructor(private customerService:CustomerServiceService,private modalCtrl:ModalController,private http:HttpClient) { }
   
  /* public customers:Customer[];
 
@@ -30,7 +32,7 @@ export class AdminDashboardPage implements OnInit {
   }*/
   //  private investmentChart:Chart;
   chart:any=[];
-  
+ 
   ngOnInit() {
     //this.generateCharts();
    // this.getCustomers();4
@@ -66,8 +68,21 @@ this.chart= new Chart('canvas1',{
   }
 })
 
-  }
-
+this.getAllChildren();
+}
+children:Children[]=[];
+public getAllChildren(){
+   let results : any;
+  let url='localhost:8080/child/all';
+  this.http.get<Children[]>(url).subscribe(
+    res=>{
+      this.children = res;
+    },
+    err =>{
+      console.error(err);
+    }
+  );
+}
   async addcustomer(){
     const register=await this.modalCtrl.create({
       component:CustomerRegisterComponent
