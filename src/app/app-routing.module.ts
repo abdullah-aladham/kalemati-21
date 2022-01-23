@@ -5,8 +5,8 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
+  canLoad:[AuthGuard]  },
   {
     path: 'forgotpass',
     loadChildren: () => import('./forgotpass/forgotpass.module').then( m => m.ForgotpassPageModule)
