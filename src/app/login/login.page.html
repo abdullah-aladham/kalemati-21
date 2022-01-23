@@ -5,11 +5,11 @@
 </ion-header>
 
 <ion-content>
-  <ion-form [formGroup]="LoginInputValidation">
+  <ion-form>
     <ion-item>
       <ion-label position="floating">email</ion-label>
       <ion-input type="text" [(ngModel)]="Email" formControlName="Email"></ion-input>
-      <small *ngIf="LoginInputValidation.get('name').invalid" class="text-danger"> Email is Required</small>
+      <small  class="text-danger"> Email is Required</small>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
@@ -17,12 +17,15 @@
       </ion-label>
       <ion-input type="password" [(ngModel)]="password" FormControlName="Password"></ion-input>
     </ion-item>
-    <ion-button (click)="login()">login</ion-button>
-    <a [routerLink]="forgotpass">forgot pass</a>
     <ion-item>
-      <ion-checkbox color="primary" value="remeber me">Remember me</ion-checkbox>
+      <ion-checkbox color="primary" value="remeber me" ></ion-checkbox>
+      <ion-label id="remeber">Remeber me</ion-label>
     </ion-item>
-<ion-button (click)="login()">Login </ion-button>
+    <ion-button (click)="login()">login</ion-button>
+
+    <a [routerLink]="forgotpass" id="forgot">forgot pass</a>
+    
+
   </ion-form>
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" pullFactor="0.5" pullMin="100" pullMax="200">
     <ion-refresher-content 
