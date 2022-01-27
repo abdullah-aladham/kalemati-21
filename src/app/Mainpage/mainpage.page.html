@@ -73,23 +73,36 @@
     </ion-grid>
     <ion-grid>
       <ion-col>
-        <h4>Children</h4>
-        <ion-row>
-          <swiper #swiper  [config]="config"  ><!--[allowTouchMove]="false" this can be used for locking -->
-            <ng-template swiperSlide *ngFor="let child of children" >
+        <h4 class="text-justify-center">Children</h4>
+        <ion-grid>
+          <ion-row>
+            <ion-col [size]="3">
+              id
+            </ion-col>
+            <ion-col [size]="3">name</ion-col>
+            <ion-col [size]="3">gender</ion-col>
+            <ion-col>age</ion-col>
+          </ion-row>
+          <ion-row>
+            
+      </ion-grid>
+          
+
+          <!--<swiper #swiper  [config]="config"  >--><!--[allowTouchMove]="false" this can be used for locking -->
+            <!--<ng-template swiperSlide *ngFor="let child of children" >
               
             <ion-card>
               <ion-card-header>{{child.name}}</ion-card-header>
               <ion-card-content><img src="./assets/girl1.png" alt="image template"></ion-card-content>
             <p>{{child.age}} years</p>  
             </ion-card>
-        </ng-template>
+        </ng-template>-->
            <!--   <ng-template swiperSlide >
               <ion-card ><ion-card-header>{{child?.name}}</ion-card-header>
               <ion-card-content><img src="assets/boy.png " alt="image template"></ion-card-content>
               </ion-card></ng-template>-->
-             </swiper>
-        </ion-row>
+             <!--</swiper>-->
+        
       </ion-col>
     </ion-grid>
  

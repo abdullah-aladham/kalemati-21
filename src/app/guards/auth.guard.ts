@@ -20,7 +20,7 @@ export class AuthGuard implements CanLoad {
       if(navigation){
         url=navigation.extractedUrl.toString();
       }
-      this.router.navigateByUrl('/login')
+      this.router.navigateByUrl('/Login');
       return false;
     }
   }

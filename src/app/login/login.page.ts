@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 //import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -9,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class LoginPage implements OnInit {
   
  // LoginInputValidation:FormGroup;
-  constructor() { }
+  constructor(private router:Router) { }
 
-  ngOnInit() {
+  ngOnInit( ) {
   
   }
    /* this.LoginInputValidation =new FormGroup({
@@ -19,7 +20,7 @@ export class LoginPage implements OnInit {
       Password: new FormControl(null,[Validators.required,Validators.minLength(8)])
     });*/
   login(){
-    
+    this.router.navigateByUrl("/Mainpage");
   }
   doRefresh(event){
     console.log('Begin async operation');

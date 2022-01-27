@@ -5,12 +5,19 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
-  canLoad:[AuthGuard]  },
+    // loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+
+},
   {
     path: 'forgotpass',
     loadChildren: () => import('./forgotpass/forgotpass.module').then( m => m.ForgotpassPageModule)
   },
+  { 
+    path: 'Mainpage',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
+  },
+
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
@@ -34,7 +41,7 @@ const routes: Routes = [
   {
     path: 'admin-dashboard',
     loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule),
-    // canLoad:[AuthGuard]
+     canLoad:[AuthGuard]
   },
   {
     path: 'register',
